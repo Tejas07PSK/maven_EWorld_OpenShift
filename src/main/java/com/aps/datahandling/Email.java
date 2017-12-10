@@ -32,7 +32,6 @@ import java.util.Properties;
 import java.util.Date;
 import javax.mail.*;
 import javax.mail.internet.*;
-import javax.mail.internet.MimeMessage;
 import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -70,83 +69,85 @@ public final class Email implements Serializable
        
        
               public static void sendUserRegEmail (String ... vals)
-	 {
+	      {
                    try
                      {
-	            checknresetAccTkn ();
+	                      checknresetAccTkn ();
                       
-	             user = cred.get("EMAIL_ID").toString();
-	             pass = cred.get("EMAIL_PASSWORD").toString();
-	             String to = vals[2];
-	             String from = cred.get("EMAIL_ID").toString();
-	             String subject = "User Registration Details---";
-	            boolean sessionDebug = false;
+	                      user = cred.get("EMAIL_ID").toString();
+	                      pass = cred.get("EMAIL_PASSWORD").toString();
+	                      String to = vals[2];
+	                      String from = cred.get("EMAIL_ID").toString();
+	                      String subject = "User Registration Details---";
+	                      boolean sessionDebug = false;
 
-	            Properties props = System.getProperties();
-                                     props.put("mail.smtp.starttls.enable", "true");
-	                       props.put("mail.smtp.host", "smtp.gmail.com");
-	                       props.put("mail.smtp.port", "587");
-	                       props.put("mail.smtp.auth", "true");
-                                     props.put("mail.smtp.auth.mechanisms", "XOAUTH2");
-	                       props.put("mail.smtp.starttls.required", "true");
-                                     props.put("mail.smtp.starttls.enable", "true");
-                                     props.put("mail.transport.protocol","smtp");
-	                       props.put("mail.user", user);
-	                       props.put("mail.password", pass);
-                         java.security.Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
-                                     props.put("mail.smtp.socketFactory.port","587");
-                                     props.put("mail.smtp.socketFactory.fallback","true");
-                                     props.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");                      
+	                      Properties props = System.getProperties();
+                                         props.put("mail.smtp.starttls.enable", "true");
+	                                 props.put("mail.smtp.host", "smtp.gmail.com");
+	                                 props.put("mail.smtp.port", "587");
+	                                 props.put("mail.smtp.auth", "true");
+                                         props.put("mail.smtp.auth.mechanisms", "XOAUTH2");
+	                                 props.put("mail.smtp.starttls.required", "true");
+                                         props.put("mail.smtp.starttls.enable", "true");
+                                         props.put("mail.transport.protocol","smtp");
+	                                 props.put("mail.user", user);
+	                                 props.put("mail.password", pass);
+                              java.security.Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
+                                         props.put("mail.smtp.socketFactory.port","587");
+                                         props.put("mail.smtp.socketFactory.fallback","true");
+                                         props.put("mail.smtp.socketFactory.class","javax.net.ssl.SSLSocketFactory");                      
 	            
-                          System.out.println("Sending Message Through GMail .....");
+                              System.out.println("Sending Message Through GMail .....");
                           
-                          Session mailSession = Session.getDefaultInstance(props, 
-                                                                           new javax.mail.Authenticator()
-                                                                           {
-                                                                                 @Override
-                                                                                 protected PasswordAuthentication getPasswordAuthentication()
-                                                                                 {
-                                                                                       final String ur = user;
-                                                                                       final String ps = pass;
-                                                                                       return new PasswordAuthentication(ur, ps);
-                                                                                 }
-                                                                           }
-                                                                          );
-	            mailSession.setDebug(sessionDebug);
-	            Message msg = new MimeMessage(mailSession);
-	            msg.setFrom(new InternetAddress(from));
-	            InternetAddress[] address = {new InternetAddress(to)};
-	            msg.setRecipients(Message.RecipientType.TO, address);
-	            msg.setSubject(subject); msg.setSentDate(new Date());
-	            msg.setContent("<h2>You Have Been Successfully Registered, given below are your registration details --</h2>"
-	            		         +"<h4>"+"FIRSTNAME : - "+vals[0]+"</h4>"
-	            		         +"<h4>"+"LASTNAME : - "+vals[1]+"</h4>"
-	            		         +"<h4>"+"USER_EMAIL_ID : - "+vals[2]+"</h4>"
-	            		         +"<h4>"+"MOB NO : - "+vals[3]+"</h4>"
-	            		         +"<h4>"+"LOCALITY : - "+vals[4]+"</h4>"
-	            		         +"<h4>"+"CITY : - "+vals[5]+"</h4>"
-	            		         +"<h4>"+"PINCODE : - "+vals[6]+"</h4>"
-	            		         +"<h4>"+"STATE : - "+vals[7]+"</h4>"
-	            		         +"<h4>"+"COUNTRY : - "+vals[8]+"</h4>"
+                              Session mailSession = Session.getDefaultInstance(props, 
+                                                                                new javax.mail.Authenticator()
+                                                                                {
+                                                                                      @Override
+                                                                                       protected PasswordAuthentication getPasswordAuthentication()
+                                                                                       {
+                                                                                               final String ur = user;
+                                                                                               final String ps = pass;
+                                                                                               return (new PasswordAuthentication(ur, ps));
+                                                                                       }
+                                                                                }
+                                                                              );
+	                      mailSession.setDebug(sessionDebug);
+	            
+		              Message msg = new MimeMessage(mailSession);
+	                      msg.setFrom(new InternetAddress(from));
+	                      InternetAddress[] address = {new InternetAddress(to)};
+	                      msg.setRecipients(Message.RecipientType.TO, address);
+	                      msg.setSubject(subject); msg.setSentDate(new Date());
+	                      msg.setContent("<h2>You Have Been Successfully Registered, given below are your registration details --</h2>"
+	            		                  +"<h4>"+"FIRSTNAME : - "+vals[0]+"</h4>"
+	            		                  +"<h4>"+"LASTNAME : - "+vals[1]+"</h4>"
+	            		                  +"<h4>"+"USER_EMAIL_ID : - "+vals[2]+"</h4>"
+	            		                  +"<h4>"+"MOB NO : - "+vals[3]+"</h4>"
+	            		                  +"<h4>"+"LOCALITY : - "+vals[4]+"</h4>"
+	            		                  +"<h4>"+"CITY : - "+vals[5]+"</h4>"
+	            		                  +"<h4>"+"PINCODE : - "+vals[6]+"</h4>"
+	            		                  +"<h4>"+"STATE : - "+vals[7]+"</h4>"
+	            		                  +"<h4>"+"COUNTRY : - "+vals[8]+"</h4>"
                                                   +"<h4>"+"PASSWORD : - "+vals[9]+"</h4>"
                                                   +"<h4>"+"USER_ID : - "+vals[10]+"</h4>","text/html");
 	            
-                           Transport transport=mailSession.getTransport("smtp");
-	             transport.connect("smtp.gmail.com", user, acc_tkn);
-	             transport.sendMessage(msg, msg.getAllRecipients());
-	             transport.close();
-	             System.out.println("Message sent successfully!!");
+                              Transport transport=mailSession.getTransport("smtp");
+	                      transport.connect("smtp.gmail.com", user, acc_tkn);
+	                      transport.sendMessage(msg, msg.getAllRecipients());
+	                      transport.close();
+	             
+		              System.out.println("Message sent successfully!!");
 	          
-                      }catch(Exception ex)
-	               {
-	                    System.out.println(ex);
-	               }
-	 }
+                     }catch(Exception ex)
+	                   {
+	                        System.out.println(ex);
+	                   }
+	   }
               
-              private static void checknresetAccTkn ()
-              {
-                   if( System.currentTimeMillis() > expire_time )
-                   {
+           private static void checknresetAccTkn ()
+           {
+                    if( System.currentTimeMillis() > expire_time )
+                    {
                              try
                              {
                                      String request = "client_id="+ URLEncoder.encode(cred.get("CLIENT_ID").toString(), "UTF-8")
@@ -172,29 +173,29 @@ public final class Email implements Serializable
                                       }
                                       catch (IOException e)
                                       {
-                                             String line;
-                                             BufferedReader in = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+                                              String line;
+                                              BufferedReader in = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
                                               while((line = in.readLine()) != null) 
                                               {
                                                    System.out.println(line);
                                               }
-                                             System.out.flush();
+                                              System.out.flush();
                                       }
                                      finally
                                      {
-                                            conn.disconnect();
+                                              conn.disconnect();
                                      }
                               }
                              catch (Exception e)
                              {
                                    System.out.println ("Token Error !!! "+e);
                              }
-                   }
-              }
+                     }
+             }
                
-               @SuppressWarnings("unchecked")
-               public static void writetobinencrypted(String ... vals) throws Exception
-               {
+             @SuppressWarnings("unchecked")
+             public static void writetobinencrypted(String ... vals) throws Exception
+             {
                       JSONObject det = new JSONObject();
                       det.put("EMAIL_ID", vals[0]);
                       det.put("EMAIL_PASSWORD", vals[1]);
@@ -214,10 +215,10 @@ public final class Email implements Serializable
                       ots.flush();
                       ots.close();
                       readfrombinencrypted();
-               }
+              }
                
-               private static void readfrombinencrypted() throws Exception
-               {
+              private static void readfrombinencrypted() throws Exception
+              {
                        File fl = new File (file_path);
                        System.out.println(fl.exists()+" <-FlExists & CanRdFl-> "+fl.canRead());
                        InputStream in = new FileInputStream (fl);
@@ -233,12 +234,6 @@ public final class Email implements Serializable
                              {
                                     System.out.println ("Json Parse Exception"+pe);
                              }
-                       /*System.out.println(cred.get("EMAIL_ID"));
-                                                 System.out.println(cred.get("EMAIL_PASSWORD"));
-                                                System.out.println(cred.get("GPROJ_ID"));
-                                               System.out.println(cred.get("CLIENT_ID"));
-                                              System.out.println(cred.get("CLIENT_SECRET"));
-                                             System.out.println(cred.get("REFRESH_TOKEN"));*/
-                      
-               }
+              }
+
 }
