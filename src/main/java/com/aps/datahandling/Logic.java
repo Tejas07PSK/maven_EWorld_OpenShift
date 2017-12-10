@@ -57,7 +57,7 @@ public abstract class Logic implements Serializable
        
        public static void stop()
        {
-             sf.close();
+               sf.close();
        }
        
        public static SessionFactory getSf()
