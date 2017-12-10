@@ -30,9 +30,9 @@ import org.hibernate.Session;
 import java.util.Random;
 
  public final class Insert extends Logic implements Serializable
-{
+ {
         
-        private static final long serialVersionUID = 1L;
+      private static final long serialVersionUID = 1L;
      
         private static SessionFactory sf;
         synchronized public static boolean insert(char cs,String ... vals)
@@ -49,7 +49,8 @@ import java.util.Random;
                              
              }
         }
-        synchronized private static UserDetails setUserDets(String ... vals)
+        
+	synchronized private static UserDetails setUserDets(String ... vals)
         {
                    UserDetails ud = new UserDetails ();
                    Address ad = ud.getAddress();
@@ -84,7 +85,7 @@ import java.util.Random;
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -139,7 +140,7 @@ import java.util.Random;
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -264,7 +265,7 @@ import java.util.Random;
                   }
         }
         
-              private static String generateUSER_ID() 
+        private static String generateUSER_ID() 
 	{
 		Random r = new Random ();
 		int x = r.nextInt(50000);
@@ -272,7 +273,7 @@ import java.util.Random;
 		      return (uid);
 	}
               
-              private static String generatePLACE_ID() 
+        private static String generatePLACE_ID() 
 	{
 		Random r = new Random ();
 		int x = r.nextInt(50000);
@@ -280,7 +281,7 @@ import java.util.Random;
 		      return (pid);
 	}
               
-              private static String generateRATE_ID() 
+        private static String generateRATE_ID() 
 	{
 		Random r = new Random ();
 		int x = r.nextInt(50000);
@@ -288,4 +289,4 @@ import java.util.Random;
 		      return (rid);
 	}
         
-}
+ }
