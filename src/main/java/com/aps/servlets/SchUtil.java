@@ -29,31 +29,32 @@ import java.net.UnknownHostException;
 
 @WebServlet(description = "Search Suggestion and Utility Servlet", urlPatterns = { "/SchUtil" })
  public final class SchUtil extends HttpServlet
-{
+ {
           private static final long serialVersionUID = 1L;
-	private static  InetAddress ip ;
-	private static  String ipadd  ;
+	  private static  InetAddress ip ;
+	  private static  String ipadd  ;
           
               @Override
-	public void init()
-	{
+	       public void init()
+	       {
                     
                     try{
-	                System.setProperty("java.net.preferIPv4Stack", "true");
-                              ip = InetAddress.getLocalHost();
-	                ipadd = ip.getHostAddress();
-	          }catch (UnknownHostException e)
-		{
-		       e.printStackTrace();
-		}
-	}
+	                   System.setProperty("java.net.preferIPv4Stack", "true");
+                               ip = InetAddress.getLocalHost();
+	                       ipadd = ip.getHostAddress();
+	               }catch (UnknownHostException e)
+		              {
+		                  e.printStackTrace();
+		              }
+	
+	      }
           
-             @Override          
-             protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-             {
-                     response.setContentType("text/html");
-	       response.setCharacterEncoding("UTF-8");
-	       response.setBufferSize(8192);
+              @Override          
+               protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+               {
+                         response.setContentType("text/html");
+	                 response.setCharacterEncoding("UTF-8");
+	                 response.setBufferSize(8192);
                      
                      switch (Integer.parseInt(request.getParameter("case")))
                      {
@@ -72,4 +73,4 @@ import java.net.UnknownHostException;
                                     return;
                      }
              }
-}
+  }
