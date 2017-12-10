@@ -35,70 +35,71 @@ public class Address implements Serializable
             private String city;
                               
            @Column(name="PINCODE",columnDefinition="char(6)",nullable=false)
-           private String pincode;
+            private String pincode;
                               
            @Column(name="STE",length=50,nullable=false)
-           private String state;
+            private String state;
                               
            @Column(name="COUNTRY",length=50,nullable=false)
-           private String country;
+            private String country;
 		   
            public Address()
            {		   
-	       locality="";
-	       city="";
-                     pincode="";
-	       state="";
-	       country="";
+	         locality="";
+	         city="";
+                 pincode="";
+	         state="";
+	         country="";
            }
 		   
            public String getLocality() 
            {
-	     return (locality);
+	        return (locality);
            }
 
            public void setLocality(String locality) 
            {
-	     this.locality = locality;
+	        this.locality = locality;
            }
 
            public String getCity() 
            {
-                   return (city);
+                return (city);
            }
 
             public void setCity(String city) 
             {
-	     this.city = city;
+	        this.city = city;
             }
 
             public String getPincode() 
             {
-	      return (pincode);
+	        return (pincode);
             }
 
             public void setPincode(String pincode) 
             {
-	      this.pincode = pincode;
+	        this.pincode = pincode;
             }
 
             public String getState() 
             {
-	       return (state);
+	        return (state);
             }
 
             public void setState(String state) 
             {
-	       this.state = state;
+	         this.state = state;
              }
 
              public String getCountry() 
              {
-	       return (country);
+	         return (country);
              }
 
               public void setCountry(String country) 
               {
-	       this.country = country;
+	         this.country = country;
               }
+
 }
