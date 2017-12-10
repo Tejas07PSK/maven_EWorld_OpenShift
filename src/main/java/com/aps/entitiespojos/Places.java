@@ -40,16 +40,16 @@ public class Places implements Serializable
         
         @Id
         @Column(name="PLACE_ID",unique=true)
-        private String pl_id;
+         private String pl_id;
         
         @Column(name="PLACE_NAME",length=500)
-        private String pname;
+         private String pname;
         
         @Column(name="PLACE_TYPE",length=50)
-        private String pl_type;
+         private String pl_type;
         
         @Column(name="PLACE_DESC",unique=true,length=1000)
-        private String pl_desc;
+         private String pl_desc;
         
         @Embedded
         @AttributeOverrides({
@@ -59,11 +59,11 @@ public class Places implements Serializable
                                 @AttributeOverride(name="state",column=@Column(name="PL_STE",length=50,nullable=false)),
                                 @AttributeOverride(name="country",column=@Column(name="PL_COUNTRY",length=50,nullable=false))
                              })
-        private Address addr;
+         private Address addr;
         
         @OneToOne(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
         @JoinColumn(name="USER_ID")
-        private UserDetails ud;
+         private UserDetails ud;
         
         public Places()
         {
