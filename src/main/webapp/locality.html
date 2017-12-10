@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>      
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>E-WORLD</title>
+     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Visit The E-WORLD Website">
+     <link rel="stylesheet" type="text/css" href="stylesheets/mainpage.css"/>
+</head>
+
+<body>
+
+
+    <img src="images/direction-icon.png" alt="E-WORLD Icon" width="120" height="100" >
+       <h1> <strong>E-WORLD</strong></h1>
+        
+    <h2>
+    LOCALITY SEARCH AROUND THE WORLD :
+    </h2>
+    <form id="form9" method="GET" action="mainServlet">
+      <input type="hidden" name="case" value="2">
+      <fieldset>
+        <legend><strong>Enter The Place Locality Details</strong></legend>
+        <p> 
+          <label><strong>Enter Locality -</strong></label>
+          <input type = "text"
+                 name = "plclocality" 
+                  class="mytext"/><br>
+       
+          <button type = "submit"
+                    class="sbutton">GO</button>
+        </p>
+      </fieldset>
+    </form>
+    
+ </body>
+ 
+</html>

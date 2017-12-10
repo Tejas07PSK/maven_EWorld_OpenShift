@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>      
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>E-WORLD</title>
+     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Visit The E-World Website">
+     <link rel="stylesheet" type="text/css" href="stylesheets/mainpage.css"/>
+</head>
+<body>
+
+
+    <img src="images/direction-icon.png" alt="E-World Icon" width="120" height="100" >
+       <h1> <strong>E-WORLD</strong></h1>
+        
+    <h2>
+    Now search for addresses and places across the globe, by staying docked online!!!
+    </h2>
+    <h3>
+    Get fast and reliable information at your fingertips.
+    </h3>
+    <h3>It's very simple and robust.</h3>
+     <form id="form70" method="GET" action="mainServlet">
+          <input type="hidden" name="case" value="4">
+      <fieldset>
+        <legend><strong>Search for places by their names here</strong></legend>
+        <p> 
+          <label><strong>Enter place name -</strong></label>
+          <input type = "text"
+                 name = "pname"
+                  class="mytext"/><br>
+            <button type="submit"
+                    class="sbutton">Search</button>
+        </p>
+      </fieldset>
+    </form>
+    <table id="table1">
+  <tr>
+       <th><form id="form1" method="GET" action="mainServlet">
+                 <input type="hidden" name="case" value="1">
+                 <button name="plctype" class="rqstbutton" type="submit" value="policestation">
+                    Police Stations
+                 </button>
+           </form></th>
+    <th><form id="form2" method="GET" action="mainServlet">
+                 <input type="hidden" name="case" value="1">
+                 <button name="plctype" class="rqstbutton" type="submit" value="hospital">
+                    Hospitals
+                 </button>
+           </form></th> 
+    <th><form id="form3" method="GET" action="mainServlet">
+                 <input type="hidden" name="case" value="1">
+                 <button name="plctype" class="rqstbutton" type="submit" value="school">
+                    Schools
+                 </button>
+         </form></th>
+  </tr>
+   <tr>
+    <th><form id="form4" method="GET" action="mainServlet">
+                 <input type="hidden" name="case" value="1">
+                 <button name="plctype" class="rqstbutton" type="submit" value="busstop">
+                    Bus Stops
+                 </button>
+         </form></th>
+    <th><form id="form5" method="GET" action="mainServlet">
+                 <input type="hidden" name="case" value="1">
+                 <button name="plctype" class="rqstbutton" type="submit" value="resturant">
+                    Resturants
+                 </button>
+         </form></th> 
+    <th><form id="form6" method="GET" action="mainServlet">
+                 <input type="hidden" name="case" value="1">
+                 <button name="plctype" class="rqstbutton" type="submit" value="shoppingmall">
+                    Shopping Malls
+                 </button>
+         </form></th>
+  </tr>
+   <tr>
+    <th><input type="button" onclick=" location.href='type.html';"
+                    value = "Search By Place Type"
+                    class="rqstbutton"/></th>
+    <th><input type="button" onclick=" location.href='locality.html';"
+                    value = "Search By Place Locality"
+                    class="rqstbutton"/></th>
+    <th><input type="button" onclick=" location.href='Login.html';"
+                    value = "Login"
+                    class="rqstbutton"/></th>
+  </tr>
+  <tr>
+       <th><input type="button" onclick=" location.href='userregistration.html';"
+                    value = "New User Sign UP"
+                    class="rqstbutton"/></th>
+    <th><input type="button" onclick=" location.href='ratingaccplid.html';"
+                    value = "Get Place Rating"
+                    class="rqstbutton"/></th>
+    <th><input type="button" onclick=" location.href='about.html';"
+                    value = "About Page"
+                    class="rqstbutton"/></th>
+  </tr>
+</table>
+</body>
+</html>

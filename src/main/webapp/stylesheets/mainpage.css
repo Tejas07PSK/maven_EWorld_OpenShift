@@ -1,0 +1,69 @@
+h1
+{
+    color:red;
+    font-weight: bold;
+  font-style: italic;
+  font-family:Verdana;
+}
+h2
+{
+ color:burlywood;
+          font-weight: bold;
+          font-style:normal;
+          font-family:Calibri;
+}
+h3
+{
+ color:red;
+          font-weight: bold;
+          font-style:normal;
+          font-family:Calibri;
+}
+strong
+{
+ color:lawngreen;
+          font-weight: bold;
+          font-style:normal;
+          font-family:Calibri;
+}
+body
+{
+
+   
+    background-image: url("world.jpg");
+    background-color: midnightblue;
+    height: 100%;
+    margin: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+
+}
+.mytext
+{
+    position:relative;
+    width: 500px;
+    height: 30px;
+}
+.sbutton
+{
+    position: relative;
+    left: 615px;
+    color: aliceblue;
+    width: 200px;
+    height: 40px;
+    font-size: 24px;
+    margin: 5px;
+    background-color:orangered;
+}
+.rqstbutton
+{
+    position: relative;
+    left:0px;
+    width: 250px;
+    height: 60px;
+    font-size: 24px;
+    color: aliceblue;
+    background-color:orangered;
+    margin:5px;
+}

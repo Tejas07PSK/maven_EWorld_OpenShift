@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>      
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>E-WORLD</title>
+     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Visit The E-World Website">
+     <link rel="stylesheet" type="text/css" href="stylesheets/mainpage.css"/>
+</head>
+
+<body>
+
+
+    <img src="images/direction-icon.png" alt="E-WORLD ICON" width="120" height="100" >
+       <h1> <strong>E-WORLD</strong></h1>
+        
+    <h2>
+    LOGIN OR CREATE ACCOUNT
+    </h2>
+    <h3>
+        Please Login Or Create an account to access additional features of this application.
+    </h3>
+    <form id="form11" method="POST" action="mainServlet">
+         <input type="hidden" name="case" value="9">
+      <fieldset>
+        <legend><strong>Login here</strong></legend>
+        <p> 
+          <label><strong>Enter User ID -</strong></label>
+          <input type = "text"
+                 name = "uid" 
+                  class="mytext"/><br>
+            <label><strong>Enter Password -</strong></label>
+          <input type = "text"
+                 name = "pass" 
+                  class="mytext"/><br>
+            <button type = "submit"
+                    class="sbutton">Login</button>
+                    <br>
+            <input type="button" onclick="location.href='userregistration.html';"
+                    value = "Create Account"
+                    class="sbutton"/>
+            <input type="button" onclick="location.href='index.html';"
+                    value = "Home"
+                    class="sbutton"/>
+        </p>
+      </fieldset>
+    </form>
+       
+  </body>
+</html>

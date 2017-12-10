@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>      
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>E-WORLD</title>
+     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Visit The E-World Website">
+     <link rel="stylesheet" type="text/css" href="stylesheets/mainpage.css"/>
+</head>
+
+<body>
+
+
+    <img src="images/direction-icon.png" alt="E-WORLD Icon" width="120" height="100" >
+       <h1> <strong>E-WORLD</strong></h1>
+        
+    <h2>
+    CREATE ACCOUNT 
+    </h2>
+    <form id="form7" method="POST" action="mainServlet">
+      <input type="hidden" name="case" value="1">
+      <fieldset>
+        <legend><strong>Enter Details</strong></legend>
+        <p> 
+          <label><strong>Enter First Name -</strong></label>
+          <input type = "text"
+                 name = "firstname" 
+                  class="mytext"/><br>
+          <label><strong>Enter Last Name -</strong></label>
+          <input type = "text"
+                 name = "lastname" 
+                  class="mytext"/><br>
+          <label><strong>Mobile Number -</strong></label>
+          <input type = "text"
+                 name = "mobno"
+                 maxlength="10"
+                  class="mytext"/><br>
+            <label><strong>Enter Email Id -</strong></label>
+          <input type = "text"
+                 name = "emailid" 
+                  class="mytext"/><br>
+             <label><strong>Create Password -</strong></label>
+          <input type = "text"
+                 name = "pass" 
+                  class="mytext"/><br>
+            
+          <label><strong>Enter Locality -</strong></label>
+          <input type = "text"
+                 name = "locality" 
+                  class="mytext"/><br>
+         <label><strong>Enter City -</strong></label>
+          <input type = "text"
+                 name = "city" 
+                  class="mytext"/><br>
+          <label><strong>Enter State -</strong></label>
+          <input type = "text"
+                 name = "state" 
+                  class="mytext"/><br>
+		<label><strong>Enter Country -</strong></label>
+          <input type = "text"
+                 name = "country" 
+                  class="mytext"/><br>
+         <label><strong>Enter Pin code -</strong></label>
+          <input type = "text"
+                 name = "pincode"
+                 maxlength="6"
+                 class="mytext"/><br/>
+          <button type = "submit"
+                    class="sbutton">GO</button>
+        </p>
+      </fieldset>
+    </form>
+    
+     
+    
+</body>
+</html>
