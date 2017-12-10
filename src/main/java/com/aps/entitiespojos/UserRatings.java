@@ -32,28 +32,29 @@ import javax.persistence.Table;
 @Table (name="USER_RATINGS")
 public class UserRatings implements Serializable
 {
-           private static final long serialVersionUID = 1L;
+           
+       private static final long serialVersionUID = 1L;
            
            @Id
            @Column (name="RATING_ID",unique=true)
-           private String rat_id;
+            private String rat_id;
            
            @Column (name="RATING",length=5)
-           private String rat;
+            private String rat;
            
            @Column (name="COMMENTS",length=1000)
-           private String comm;
+            private String comm;
            
            @OneToOne(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
            @JoinColumn(name="PLACE_ID")
-           private Places pl;
+            private Places pl;
            
            public UserRatings()
-                   {
-                        pl=new Places();
-                        rat_id="";
-                        rat="";
-                   }
+           {
+                 pl=new Places();
+                 rat_id="";
+                 rat="";
+           }
 
           public String getComm() 
           {
@@ -94,6 +95,5 @@ public class UserRatings implements Serializable
            {
                 this.rat = rat;
            }
-           
            
 }
