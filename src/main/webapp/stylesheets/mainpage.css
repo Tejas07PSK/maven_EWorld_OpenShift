@@ -26,14 +26,16 @@ strong
           font-style:normal;
           font-family:Calibri;
 }
-body
+html,body
 {
 
    
     background-image: url("world.jpg");
-    background-color: midnightblue;
+    background-color: navy;
     height: 100%;
-    margin: 0;
+    margin: auto;
+    padding: 0;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
