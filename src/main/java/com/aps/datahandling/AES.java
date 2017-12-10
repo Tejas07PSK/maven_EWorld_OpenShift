@@ -31,6 +31,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 public final class AES 
 {
+      
        private Cipher cpr = null;
        private KeyGenerator kg = null;
        private SecretKey sk = null;
@@ -64,7 +65,7 @@ public final class AES
       
       public String encrypt(String plainText)throws Exception 
       {
-	byte [] plainTextByte = plainText.getBytes();
+	     byte [] plainTextByte = plainText.getBytes();
              cpr.init(Cipher.ENCRYPT_MODE, sk);
              byte [] encryptedByte = cpr.doFinal(plainTextByte);
              Base64.Encoder encoder = Base64.getEncoder();
@@ -83,6 +84,5 @@ public final class AES
              String decryptedText = new String(decryptedByte);
              return (decryptedText);
       }
-      
       
 }
