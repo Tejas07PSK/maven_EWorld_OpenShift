@@ -49,28 +49,28 @@ public final class AndroServlet extends HttpServlet
      private static final long serialVersionUID = 1L;
 	
               private static  InetAddress ip ;
-	private static  String ipadd  ;
+	      private static  String ipadd  ;
           
               @Override
-	public void init()
-	{
-                    System.setProperty("java.net.preferIPv4Stack", "true");
-                    try{
-	                ip = InetAddress.getLocalHost();
-	                ipadd = ip.getHostAddress();
-	          }catch (UnknownHostException e)
-		{
-		       e.printStackTrace();
-		}
-	}
+	      public void init()
+	      {
+                     System.setProperty("java.net.preferIPv4Stack", "true");
+                     try{
+	                   ip = InetAddress.getLocalHost();
+	                   ipadd = ip.getHostAddress();
+	                }catch (UnknownHostException e)
+		               {
+		                     e.printStackTrace();
+		               }
+	      }
           
             @Override
             @SuppressWarnings({"unchecked", "unchecked"})
             protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
             {
                          response.setContentType("text/json");
-	           response.setCharacterEncoding("UTF-8");
-	           response.setBufferSize(8192);
+	                 response.setCharacterEncoding("UTF-8");
+	                 response.setBufferSize(8192);
                          PrintWriter out = null;
                          
                          if (Validate.isUserExists(request.getParameter("uid"),request.getParameter("pass")))
@@ -85,9 +85,9 @@ public final class AndroServlet extends HttpServlet
                             {
                                   out=response.getWriter();
                                   out.print("ERROR!! \n"
-			     + "FAILED!!! Incorrect User_Id Or Password. \n"
+			                      + "FAILED!!! Incorrect User_Id Or Password. \n"
                                               + "REASON -- User/Password Does Not Exist!! \n"
-			     + "Please Enter Correct Credentials!! \n");
+			                      + "Please Enter Correct Credentials!! \n");
                                   out.flush();
                                   out.close();
                             }
@@ -99,8 +99,8 @@ public final class AndroServlet extends HttpServlet
              protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
              {
                          response.setContentType("text/json");
-	           response.setCharacterEncoding("UTF-8");
-	           response.setBufferSize(8192);
+	                 response.setCharacterEncoding("UTF-8");
+	                 response.setBufferSize(8192);
                          PrintWriter out = null;
                          StringWriter sw = null;
                          JSONObject jsobj = null;
@@ -141,9 +141,9 @@ public final class AndroServlet extends HttpServlet
                                    {
                                          out=response.getWriter();
                                          out.print("ERROR!! \n"
-			             + "FAILED!!! No Place Type. \n"
+			                              + "FAILED!!! No Place Type. \n"
                                                       + "REASON -- Places of such type don't exist in our database!! \n"
-			             + "Please Enter correct Place Type!! \n");
+			                              + "Please Enter correct Place Type!! \n");
                                          out.flush();
                                          out.close();    
                                    }
@@ -181,9 +181,9 @@ public final class AndroServlet extends HttpServlet
                                    {
                                          out=response.getWriter();
                                                out.print("ERROR!! \n"
-			    	        + "FAILED!!! No Place Type. \n"
+			    	                               + "FAILED!!! No Place Type. \n"
                                                                + "REASON -- Places of such type don't exist in our database!! \n"
-			    	        + "Please enter correct locality!!! \n");
+			    	                               + "Please enter correct locality!!! \n");
                                                out.flush();
                                                out.close();    
                                    }
@@ -221,9 +221,9 @@ public final class AndroServlet extends HttpServlet
                                    {
                                          out=response.getWriter();
                                                out.print("ERROR!! \n"
-			    	        + "FAILED!!! No Place Type. \n"
+			    	                               + "FAILED!!! No Place Type. \n"
                                                                + "REASON -- Places of such type don't exist in our database!! \n"
-			    	        + "Please enter correct locality!!! \n");
+			    	                               + "Please enter correct locality!!! \n");
                                                out.flush();
                                                out.close();    
                                    }
@@ -260,7 +260,7 @@ public final class AndroServlet extends HttpServlet
                                         avg = sum/num;
                                                 jsobj.put("AVERAGE_PLACE_RATING", avg);
                                                 jsobj.put("USER_RATING_LIST",arr);
-                                         sw = new StringWriter ();
+                                        sw = new StringWriter ();
                                                 jsobj.writeJSONString(sw);
                                          out.println(sw.toString());
                                          sw.flush();
@@ -270,11 +270,11 @@ public final class AndroServlet extends HttpServlet
                                    }
                                    else
                                    {
-                                         out=response.getWriter();
+                                             out=response.getWriter();
                                              out.print("ERROR!! \n"
-			    	    + "FAILED!!! No Place Type. \n"
+			    	                           + "FAILED!!! No Place Type. \n"
                                                            + "REASON -- Places of such type don't exist in our database!! \n"
-			    	    + "Please enter correct Place_ID. \n");
+			    	                           + "Please enter correct Place_ID. \n");
                                              out.flush();
                                              out.close();    
                                    }
@@ -285,9 +285,9 @@ public final class AndroServlet extends HttpServlet
                                           {
                                                    out=response.getWriter();
                                                    out.print("HQL UPDATE ERROR!!"
-			    	          + "FAILED!!! Error Occured_database exception. \n"
+			    	                                 + "FAILED!!! Error Occured_database exception. \n"
                                                                  + "REASON -- EmailId Already Exists!! \n"
-			    	          + "Please enter a different email_id. \n");
+			    	                                 + "Please enter a different email_id. \n");
                                                    out.flush();
                                                    out.close();
                                                    return;
@@ -298,20 +298,20 @@ public final class AndroServlet extends HttpServlet
                                               {
                                                    out=response.getWriter();
                                                    out.print( "HQL UPDATE Successful!! \n"
-			    	          + "Success!!! We have updated your email_id. \n"
+			    	                                 + "Success!!! We have updated your email_id. \n"
                                                                  + "REASON -- Internal hql query successful!!"
-			    	          + "Thank you!! \n");
+			    	                                 + "Thank you!! \n");
                                                    out.flush();
                                                    out.close();
                                                    return;
                                               }
                                               else
                                               {
-                                                   out=response.getWriter();
+                                                             out=response.getWriter();
                                                              out.print("HQL UPDATE ERROR!! \n"
-			    	                   + "FAILED!!! Error Occured_database exception. \n"
+			    	                                          + "FAILED!!! Error Occured_database exception. \n"
                                                                           + "REASON -- Internal SQLQuery/Transaction Error!! \n"
-			    	                   + "Please try again later!! \n");
+			    	                                          + "Please try again later!! \n");
                                                              out.flush();
                                                              out.close();
                                               }
@@ -323,302 +323,303 @@ public final class AndroServlet extends HttpServlet
                                           {
                                                    out=response.getWriter();
                                                    out.print("HQL UPDATE ERROR!! \n"
-			    	          + "FAILED!!! Error Occured_database exception. \n"
+			    	                                 + "FAILED!!! Error Occured_database exception. \n"
                                                                  + "REASON -- Mobile Number Already Exists!! \n"
-			    	          + "Please enter a different mobile number. \n");
+			    	                                 + "Please enter a different mobile number. \n");
                                                    out.flush();
                                                    out.close();
                                                    return;
                                            } 
-                                        else 
-                                        {
-                                              if (Update.updateUserPhone(request.getParameter("uid"),request.getParameter("mobno")))
-                                              {
-                                                   out=response.getWriter();
-                                                   out.print("HQL UPDATE Successful!! \n"
-			    	          + "Success!!! We have updated your phone number. \n"
-                                                                 + "REASON -- Internal hql query successful!! \n"
-			    	          + "Thank you!! \n");
-                                                   out.flush();
-                                                   out.close();
-                                                   return;
-                                              }
-                                              else
-                                              {
-                                                   out=response.getWriter();
-                                                             out.print("HQL UPDATE ERROR!! \n"
-			    	                   + "FAILED!!! Error Occured_database exception. \n"
-                                                                          + "REASON -- Internal SQLQuery/Transaction Error!! \n"
-			    	                   + "Please try again later!! \n");
-                                                             out.flush();
-                                                             out.close();
-                                              }
-                                        }    
-                                   }
-                                   else if (request.getParameterMap().containsKey("pass"))
-                                   {
+                                           else 
+                                           {
+                                                   if (Update.updateUserPhone(request.getParameter("uid"),request.getParameter("mobno")))
+                                                   {
+                                                              out=response.getWriter();
+                                                              out.print("HQL UPDATE Successful!! \n"
+			    	                                              + "Success!!! We have updated your phone number. \n"
+                                                                              + "REASON -- Internal hql query successful!! \n"
+			    	                                              + "Thank you!! \n");
+                                                              out.flush();
+                                                              out.close();
+                                                              return;
+                                                    }
+                                                    else
+                                                    {
+                                                              out=response.getWriter();
+                                                              out.print("HQL UPDATE ERROR!! \n"
+			    	                                               + "FAILED!!! Error Occured_database exception. \n"
+                                                                               + "REASON -- Internal SQLQuery/Transaction Error!! \n"
+			    	                                               + "Please try again later!! \n");
+                                                              out.flush();
+                                                              out.close();
+                                                    }
+                                            }    
+                                     }
+                                     else if (request.getParameterMap().containsKey("pass"))
+                                     { 
                                             if (Validate.isUserPasswordExists(request.getParameter("pass")))
-                                          {
-                                                   out=response.getWriter();
-                                                   out.print("HQL UPDATE ERROR!! \n"
-			    	          + "FAILED!!! Error Occured_database exception. \n"
-                                                                 + "REASON -- Password Already Being Used By Another User!! \n"
-			    	          + "Please enter a different password. \n");
-                                                   out.flush();
-                                                   out.close();
-                                                   return;
-                                           } 
-                                        else 
-                                        {
-                                              if (Update.updateUserPassword(request.getParameter("uid"),request.getParameter("pass")))
-                                              {
-                                                   out=response.getWriter();
-                                                   out.print("HQL UPDATE Successful!! \n"
-			    	         + "Success!!! We have updated your password. \n"
-                                                                + "REASON -- Internal hql query successful!! \n"
-			    	         + "Thank you!! \n");
-                                                   out.flush();
-                                                   out.close();
-                                                   return;
-                                              }
-                                              else
-                                              {
-                                                   out=response.getWriter();
-                                                             out.print("HQL UPDATE ERROR!! \n"
-			    	                   + "FAILED!!! Error Occured_database exception. \n"
-                                                                          + "REASON -- Internal SQLQuery/Transaction Error!! \n"
-			    	                   + "Please try again later. \n");
-                                                             out.flush();
-                                                             out.close();
-                                              }
-                                        }    
-                                   }
-                                   return;
-                     }
+                                            {
+                                                    out=response.getWriter();
+                                                    out.print("HQL UPDATE ERROR!! \n"
+			    	                                  + "FAILED!!! Error Occured_database exception. \n"
+                                                                  + "REASON -- Password Already Being Used By Another User!! \n"
+			    	                                  + "Please enter a different password. \n");
+                                                    out.flush();
+                                                    out.close();
+                                                    return;
+                                             } 
+                                             else 
+                                             {
+                                                    if (Update.updateUserPassword(request.getParameter("uid"),request.getParameter("pass")))
+                                                    {
+                                                                out=response.getWriter();
+                                                                out.print("HQL UPDATE Successful!! \n"
+			    	                                               + "Success!!! We have updated your password. \n"
+                                                                               + "REASON -- Internal hql query successful!! \n"
+			    	                                               + "Thank you!! \n");
+                                                                out.flush();
+                                                                out.close();
+                                                                return;
+                                                    }
+                                                    else
+                                                    {
+                                                                out=response.getWriter();
+                                                                out.print("HQL UPDATE ERROR!! \n"
+			    	                                              + "FAILED!!! Error Occured_database exception. \n"
+                                                                              + "REASON -- Internal SQLQuery/Transaction Error!! \n"
+			    	                                              + "Please try again later. \n");
+                                                                out.flush();
+                                                                out.close();
+                                                    }
+                                              }    
+                                     }
+                                     return;
+                       }
              
              }
-             @Override
-             protected void doPut(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException
-             {
-                         response.setContentType("text/json");
-	           response.setCharacterEncoding("UTF-8");
-	           response.setBufferSize(8192);
-                         PrintWriter out = null;
+             
+	     @Override
+              protected void doPut(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException
+              {
+                            response.setContentType("text/json");
+	                    response.setCharacterEncoding("UTF-8");
+	                    response.setBufferSize(8192);
+                            PrintWriter out = null;
                          
                              BufferedReader rd = new BufferedReader(new InputStreamReader(request.getInputStream()));
-		 StringBuffer req = new StringBuffer();
-		 String line = "";
-		 while ((line = rd.readLine()) != null) 
-		 {
-			 req.append(line);
-		 }
-		 rd.close();
+		             StringBuffer req = new StringBuffer();
+		             String line = "";
+		             while ((line = rd.readLine()) != null) 
+		             {
+			              req.append(line);
+		             }
+		             rd.close();
                      
-                         JSONParser parser = new JSONParser ();
-                         JSONObject jsobj = null; 
+                             JSONParser parser = new JSONParser ();
+                             JSONObject jsobj = null; 
 	           
                          try 
-	           {
-	               jsobj=(JSONObject)(parser.parse(req.toString()));
-                         }catch(ParseException pe)
-                              {
-                                     System.out.println(pe);
-                                     return;
-                              }
+	                   {
+	                           jsobj=(JSONObject)(parser.parse(req.toString()));
+                            }catch(ParseException pe)
+                                  {
+                                        System.out.println(pe);
+                                        return;
+                                  }
                      
-                     switch (Integer.parseInt((String)jsobj.get("case")))
-                     {
-                          case 1 : if (Validate.isUserEmailExists((String)jsobj.get("emailid")))
-                                   {
-                                          out=response.getWriter();
-                                          out.print("HQL INSERTION ERROR!! \n"
-			    	+ "FAILED!!! Error Occured_database exception. \n"
-                                                       + "REASON -- EmailId Already Exists!! \n"
-			    	+ "Please enter a different email_id. \n");
-                                          out.flush();
-                                          out.close();
-                                          return;
-                                   } 
-                                   if (Validate.isUserPhoneExists((String)jsobj.get("mobno")))
-                                   {
-                                          out=response.getWriter();
-                                          out.print("HQL INSERTION ERROR! \n"
-			    	+ "FAILED!!! Error Occured_database exception. \n"
-                                                       + "REASON -- MobNo Already Exists!! \n"
-			    	+ "Please enter a different mobile number. \n");
-                                          out.flush();
-                                          out.close(); 
-                                          return;
-                                   }
-                                   if (Validate.isUserPasswordExists((String)jsobj.get("pass")))
-                                   {
-                                          out=response.getWriter();
-                                          out.print("HQL INSERTION ERROR!! \n"
-			    	+ "FAILED!!! Error Occured_database exception. \n"
-                                                       + "REASON -- Password being used by another User!! \n"
-			    	+ "Please enter a different password. \n");
-                                          out.flush();
-                                          out.close();
-                                          return;
-                                    }
-                                    else
-                                    {
-                                          if (Insert.insert('U',(String)jsobj.get("firstname"),(String)jsobj.get("lastname"),(String)jsobj.get("mobno"),(String)jsobj.get("emailid"),(String)jsobj.get("pass"),(String)jsobj.get("locality"),(String)jsobj.get("city"),(String)jsobj.get("pincode"),(String)jsobj.get("state"),(String)jsobj.get("country")))
-                                          {
-                                                        UserDetails ud = Fetch.getUserFromEmail((String)jsobj.get("emailid"));
-                                                        out=response.getWriter();
-                                                        out.print("HQL INSERTION Successful!! \n"
-			    	            + "You have been successfully registered in our database. \n"
-                                                                   + "Salut & Welcome to the E-Burdwan community, new User!! \n"
-                                                                   + "Given below are your registration details!! \n"
-                                                                   + "Firstname - "+ud.getFirstname()+" \n"
-	            		                          + "LastName - "+ud.getLastname()+" \n"
-	            		                          + "EmailId - "+ud.getEmail_id()+" \n"
-	            		                          + "Mobno - "+ud.getMob_no()+" \n"
-	            		                          + "Locality - "+(ud.getAddress()).getLocality()+" \n"
-	            		                          + "City - "+(ud.getAddress()).getCity()+" \n"
-	            		                          + "Pincode - "+(ud.getAddress()).getPincode()+" \n"
-	            		                          + "State - "+(ud.getAddress()).getState()+" \n"
-	            		                          + "Country - "+(ud.getAddress()).getCountry()+" \n"
-                                                                   + "Password - "+ud.getPass()+" \n"
-                                                                   + "User_Id - "+ud.getUsr_id()+" \n"
-			    	            + "Thank you!! \n");
-                                                        out.flush();
-                                                        out.close();
-                                                        return;
-                                          }
-                                          else
-                                          {
-                                                         out=response.getWriter();
-                                                         out.print("HQL INSERTION ERROR!! \n"
-			    	              + "FAILED!!! Error Occured_database exception. \n"
-                                                                     + "REASON -- Internal SQLQuery/Transaction Error!! \n"
-                                                                     + "Please Try Again Later!!! \n");
-                                                         out.flush();
-                                                         out.close();
-                                          }
+                         switch (Integer.parseInt((String)jsobj.get("case")))
+                         {
+                                  case 1 : if (Validate.isUserEmailExists((String)jsobj.get("emailid")))
+                                           {
+                                                   out=response.getWriter();
+                                                   out.print("HQL INSERTION ERROR!! \n"
+			    	                                 + "FAILED!!! Error Occured_database exception. \n"
+                                                                 + "REASON -- EmailId Already Exists!! \n"
+			    	                                 + "Please enter a different email_id. \n");
+                                                   out.flush();
+                                                   out.close();
+                                                   return;
+                                           } 
+                                           if (Validate.isUserPhoneExists((String)jsobj.get("mobno")))
+                                           {
+                                                   out=response.getWriter();
+                                                   out.print("HQL INSERTION ERROR! \n"
+			    	                                 + "FAILED!!! Error Occured_database exception. \n"
+                                                                 + "REASON -- MobNo Already Exists!! \n"
+			    	                                 + "Please enter a different mobile number. \n");
+                                                   out.flush();
+                                                   out.close(); 
+                                                   return;
+                                           }
+                                           if (Validate.isUserPasswordExists((String)jsobj.get("pass")))
+                                           {
+                                                    out=response.getWriter();
+                                                    out.print("HQL INSERTION ERROR!! \n"
+			    	                                    + "FAILED!!! Error Occured_database exception. \n"
+                                                                    + "REASON -- Password being used by another User!! \n"
+			    	                                    + "Please enter a different password. \n");
+                                                    out.flush();
+                                                    out.close();
+                                                    return;
+                                            }
+                                            else
+                                            {
+                                                    if (Insert.insert('U',(String)jsobj.get("firstname"),(String)jsobj.get("lastname"),(String)jsobj.get("mobno"),(String)jsobj.get("emailid"),(String)jsobj.get("pass"),(String)jsobj.get("locality"),(String)jsobj.get("city"),(String)jsobj.get("pincode"),(String)jsobj.get("state"),(String)jsobj.get("country")))
+                                                    {
+                                                           UserDetails ud = Fetch.getUserFromEmail((String)jsobj.get("emailid"));
+                                                           out=response.getWriter();
+                                                           out.print("HQL INSERTION Successful!! \n"
+			    	                                          + "You have been successfully registered in our database. \n"
+                                                                          + "Salut & Welcome to the E-Burdwan community, new User!! \n"
+                                                                          + "Given below are your registration details!! \n"
+                                                                          + "Firstname - "+ud.getFirstname()+" \n"
+	            		                                          + "LastName - "+ud.getLastname()+" \n"
+	            		                                          + "EmailId - "+ud.getEmail_id()+" \n"
+	            		                                          + "Mobno - "+ud.getMob_no()+" \n"
+	            		                                          + "Locality - "+(ud.getAddress()).getLocality()+" \n"
+	            		                                          + "City - "+(ud.getAddress()).getCity()+" \n"
+	            		                                          + "Pincode - "+(ud.getAddress()).getPincode()+" \n"
+	            		                                          + "State - "+(ud.getAddress()).getState()+" \n"
+	            		                                          + "Country - "+(ud.getAddress()).getCountry()+" \n"
+                                                                          + "Password - "+ud.getPass()+" \n"
+                                                                          + "User_Id - "+ud.getUsr_id()+" \n"
+			    	                                          + "Thank you!! \n");
+                                                           out.flush();
+                                                           out.close();
+                                                           return;
+                                                    }
+                                                    else
+                                                    {
+                                                            out=response.getWriter();
+                                                            out.print("HQL INSERTION ERROR!! \n"
+			    	                                          + "FAILED!!! Error Occured_database exception. \n"
+                                                                          + "REASON -- Internal SQLQuery/Transaction Error!! \n"
+                                                                          + "Please Try Again Later!!! \n");
+                                                            out.flush();
+                                                            out.close();
+                                                    }
                                                   
-                                    }
-                                    return;
-                                    
-                          case 2 : if (Validate.isPlaceExists((String)jsobj.get("plcdesc")))
-                                   {
-                                            out=response.getWriter();
-                                            out.print("HQL INSERTION ERROR!! \n" 
-			    	  + "FAILED!!! Error Occured_database exception. \n"
-                                                         + "REASON -- Place Already Exists!! \n"
-			    	  + "Please enter a unique description. \n");
-                                            out.flush();
-                                            out.close();
+                                            }
                                             return;
-                                   }
-                                   else
-                                   {
-                                          if (Insert.insert('P',(String)jsobj.get("uid"),(String)jsobj.get("plname"),(String)jsobj.get("pltype"),(String)jsobj.get("plocality"),(String)jsobj.get("pcity"),(String)jsobj.get("ppincode"),(String)jsobj.get("pstate"),(String)jsobj.get("pcountry"),(String)jsobj.get("plcdesc")))
-                                          {
-                                                        Places pl = Fetch.getPlaceFromDesc((String)jsobj.get("plcdesc"));
-                                                        out=response.getWriter();
-                                                        out.print("HQL INSERTION Successful!! \n"
-			    	              + "You have successfully inserted a place in our database. \n"
-                                                                     + "Salut & Welcome to the E-Burdwan community, User!! \n"
-                                                                     + "Given below are the details about the place you inserted!! \n"
-                                                                     + "UserId - "+(String)jsobj.get("uid")+" \n"
-                                                                     + "PlaceId - "+pl.getPl_id()+" \n"
-	            		                            + "PlaceName - "+pl.getPname()+" \n"
-	            		                            + "PlaceType - "+pl.getPl_type()+" \n"
-	            		                            + "Locality - "+(pl.getAddr()).getLocality()+" \n"
-	            		                            + "City - "+(pl.getAddr()).getCity()+" \n"
-	            		                            + "Pincode - "+(pl.getAddr()).getPincode()+" \n"
-	            		                            + "State - "+(pl.getAddr()).getState()+" \n"
-	            		                            + "Country - "+(pl.getAddr()).getCountry()+" \n"
-                                                                     + "Description - "+pl.getPl_desc()+" \n"
-			    	              + "Thank you!! \n");
-                                                        out.flush();
-                                                        out.close();
-                                                        return;
-                                          }
-                                          else
-                                             {
+                                    
+                                   case 2 : if (Validate.isPlaceExists((String)jsobj.get("plcdesc")))
+                                            {
                                                        out=response.getWriter();
-                                                       out.print("HQL INSERTION ERROR!! \n"
-			    	             + "FAILED!!! Error Occured_database exception. \n"
-                                                                    + "REASON -- Internal SQLQuery/Transaction Error!! \n"
-			    	             + "Please Try Again Later!!! \n");
+                                                       out.print("HQL INSERTION ERROR!! \n" 
+			    	                                        + "FAILED!!! Error Occured_database exception. \n"
+                                                                        + "REASON -- Place Already Exists!! \n"
+			    	                                        + "Please enter a unique description. \n");
                                                        out.flush();
                                                        out.close();
-                                             }
+                                                       return;
+                                            }
+                                            else
+                                            {
+                                                       if (Insert.insert('P',(String)jsobj.get("uid"),(String)jsobj.get("plname"),(String)jsobj.get("pltype"),(String)jsobj.get("plocality"),(String)jsobj.get("pcity"),(String)jsobj.get("ppincode"),(String)jsobj.get("pstate"),(String)jsobj.get("pcountry"),(String)jsobj.get("plcdesc")))
+                                                       {
+                                                                    Places pl = Fetch.getPlaceFromDesc((String)jsobj.get("plcdesc"));
+                                                                    out=response.getWriter();
+                                                                    out.print("HQL INSERTION Successful!! \n"
+			    	                                                 + "You have successfully inserted a place in our database. \n"
+                                                                                 + "Salut & Welcome to the E-Burdwan community, User!! \n"
+                                                                                 + "Given below are the details about the place you inserted!! \n"
+                                                                                 + "UserId - "+(String)jsobj.get("uid")+" \n"
+                                                                                 + "PlaceId - "+pl.getPl_id()+" \n"
+	            		                                                 + "PlaceName - "+pl.getPname()+" \n"
+	            		                                                 + "PlaceType - "+pl.getPl_type()+" \n"
+	            		                                                 + "Locality - "+(pl.getAddr()).getLocality()+" \n"
+	            		                                                 + "City - "+(pl.getAddr()).getCity()+" \n"
+	            		                                                 + "Pincode - "+(pl.getAddr()).getPincode()+" \n"
+	            		                                                 + "State - "+(pl.getAddr()).getState()+" \n"
+	            		                                                 + "Country - "+(pl.getAddr()).getCountry()+" \n"
+                                                                                 + "Description - "+pl.getPl_desc()+" \n"
+			    	                                                 + "Thank you!! \n");
+                                                                    out.flush();
+                                                                    out.close();
+                                                                    return;
+                                                       }
+                                                       else
+                                                       {
+                                                                out=response.getWriter();
+                                                                out.print("HQL INSERTION ERROR!! \n"
+			    	                                                 + "FAILED!!! Error Occured_database exception. \n"
+                                                                                 + "REASON -- Internal SQLQuery/Transaction Error!! \n"
+			    	                                                 + "Please Try Again Later!!! \n");
+                                                                out.flush();
+                                                                out.close();
+                                                       }
                                                   
-                                   }
-                                   return;   
-                          case 3 : String rid=Validate.isRatingExists(Fetch.getUserFromId((String)jsobj.get("uid")),(String)jsobj.get("placeid"));
-                                   if (rid!=null)
-                                   {
-                                          if(Update.updateRating(rid,(String)jsobj.get("rating"),(String)jsobj.get("comments")))
-                                          {
-                                                             out=response.getWriter();
-                                                             out.print("HQL UPDATE Successful!! \n"
-			    	                  + "Successfully updated your rating for place : "+(String)jsobj.get("placeid")+". \n"
-                                                                         + "REASON -- Internal SQLQuery/Transaction Successful!! \n"
-			    	                  + "Thank you!! \n");
-                                                             out.flush();
-                                                             out.close();
-                                                             return;
-                                          }
-                                          else
-                                          {
-                                                             out=response.getWriter();
-                                                             out.print("HQL INSERTION ERROR!! \n"
-			    	                   + "FAILED!!! Error Occured_database exception. \n"
-                                                                          + "REASON -- Internal SQLQuery/Transaction Error!! \n"
-			    	                   + "Please Try Again Later!! \n");
-                                                             out.flush();
-                                                             out.close();
-                                                             return;
-                                          }
-                                   }
-                                   else
-                                   {
-                                         if (Insert.insert('R', (String)jsobj.get("uid"), (String)jsobj.get("placeid"), (String)jsobj.get("rating"), (String)jsobj.get("comments")))
-                                         {
-                                               UserRatings ur = Fetch.getUserRatingForPlace(Fetch.getUserFromId((String)jsobj.get("uid")),(String)jsobj.get("placeid"));
-                                                        out=response.getWriter();
-                                                        out.print("HQL INSERTION Successful!! \n"
-			    	              + "You have successfully rated the place in our database. \n"
-                                                                     + "Salut & Welcome to the E-Burdwan community, User!! \n"
-                                                                     + "Given below are your rating details for the place!! \n"
-                                                                     + "UserId - "+(String)jsobj.get("uid")+" \n"
-                                                                     + "PlaceId - "+(ur.getPl()).getPl_id()+" \n"
-	            		                            + "PlaceName - "+(ur.getPl()).getPname()+" \n"
-	            		                            + "PlaceType - "+(ur.getPl()).getPl_type()+" \n"
-	            		                            + "Locality - "+((ur.getPl()).getAddr()).getLocality()+" \n"
-	            		                            + "City - "+((ur.getPl()).getAddr()).getCity()+" \n"
-	            		                            + "Pincode - "+((ur.getPl()).getAddr()).getPincode()+" \n"
-	            		                            + "State - "+((ur.getPl()).getAddr()).getState()+" \n"
-	            		                            + "Country - "+((ur.getPl()).getAddr()).getCountry()+" \n"
-                                                                     + "Description - "+(ur.getPl()).getPl_desc()+" \n"
-                                                                     + "RatingId - "+ur.getRat_id()+" \n" 
-                                                                     + "Rating - "+ur.getRat()+" \n"
-                                                                     + "UserComments - "+ur.getComm()+" \n"
-			    	              + "Thank you!! \n");
-                                                        out.flush();
-                                                        out.close();
-                                                        return;
-                                         }
-                                         else
-                                         {
-                                                out=response.getWriter();
-                                                out.print("HQL INSERTION ERROR!! \n"
-			                     + "FAILED!!! Error Occured_database exception. \n"
-                                                              + "REASON -- Internal SQLQuery/Transaction Error!! \n"
-			    	       + "Please Try Again Later!! \n");
-                                                out.flush();
-                                                out.close();
-                                         }
-                                   }
-                                   return;
-                          default : return;
-                    }
-             }
+                                              }
+                                              return;   
+                                     case 3 : String rid=Validate.isRatingExists(Fetch.getUserFromId((String)jsobj.get("uid")),(String)jsobj.get("placeid"));
+                                               if (rid!=null)
+                                               {
+                                                     if(Update.updateRating(rid,(String)jsobj.get("rating"),(String)jsobj.get("comments")))
+                                                     {
+                                                                out=response.getWriter();
+                                                                out.print("HQL UPDATE Successful!! \n"
+			    	                                               + "Successfully updated your rating for place : "+(String)jsobj.get("placeid")+". \n"
+                                                                               + "REASON -- Internal SQLQuery/Transaction Successful!! \n"
+			    	                                               + "Thank you!! \n");
+                                                                out.flush();
+                                                                out.close();
+                                                                return;
+                                                     }
+                                                     else
+                                                     {
+                                                                out=response.getWriter();
+                                                                out.print("HQL INSERTION ERROR!! \n"
+			    	                                               + "FAILED!!! Error Occured_database exception. \n"
+                                                                               + "REASON -- Internal SQLQuery/Transaction Error!! \n"
+			    	                                               + "Please Try Again Later!! \n");
+                                                                out.flush();
+                                                                out.close();
+                                                                return;
+                                                     }
+                                               }
+                                               else
+                                               {
+                                                     if (Insert.insert('R', (String)jsobj.get("uid"), (String)jsobj.get("placeid"), (String)jsobj.get("rating"), (String)jsobj.get("comments")))
+                                                     {
+                                                               UserRatings ur = Fetch.getUserRatingForPlace(Fetch.getUserFromId((String)jsobj.get("uid")),(String)jsobj.get("placeid"));
+                                                               out=response.getWriter();
+                                                               out.print("HQL INSERTION Successful!! \n"
+			    	                                              + "You have successfully rated the place in our database. \n"
+                                                                              + "Salut & Welcome to the E-Burdwan community, User!! \n"
+                                                                              + "Given below are your rating details for the place!! \n"
+                                                                              + "UserId - "+(String)jsobj.get("uid")+" \n"
+                                                                              + "PlaceId - "+(ur.getPl()).getPl_id()+" \n"
+	            		                                              + "PlaceName - "+(ur.getPl()).getPname()+" \n"
+	            		                                              + "PlaceType - "+(ur.getPl()).getPl_type()+" \n"
+	            		                                              + "Locality - "+((ur.getPl()).getAddr()).getLocality()+" \n"
+	            		                                              + "City - "+((ur.getPl()).getAddr()).getCity()+" \n"
+	            		                                              + "Pincode - "+((ur.getPl()).getAddr()).getPincode()+" \n"
+	            		                                              + "State - "+((ur.getPl()).getAddr()).getState()+" \n"
+	            		                                              + "Country - "+((ur.getPl()).getAddr()).getCountry()+" \n"
+                                                                              + "Description - "+(ur.getPl()).getPl_desc()+" \n"
+                                                                              + "RatingId - "+ur.getRat_id()+" \n" 
+                                                                              + "Rating - "+ur.getRat()+" \n"
+                                                                              + "UserComments - "+ur.getComm()+" \n"
+			    	                                              + "Thank you!! \n");
+                                                               out.flush();
+                                                               out.close();
+                                                               return;
+                                                    }
+                                                    else
+                                                    {
+                                                               out=response.getWriter();
+                                                               out.print("HQL INSERTION ERROR!! \n"
+			                                                      + "FAILED!!! Error Occured_database exception. \n"
+                                                                              + "REASON -- Internal SQLQuery/Transaction Error!! \n"
+			    	                                              + "Please Try Again Later!! \n");
+                                                               out.flush();
+                                                               out.close();
+                                                    }
+                                              }
+                                             return;
+                                   default : return;
+                          }
+               }
 	           
  }
 
