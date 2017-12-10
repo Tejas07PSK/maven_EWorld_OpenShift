@@ -31,7 +31,8 @@ import org.hibernate.Session;
 
 public final class Validate extends Logic implements Serializable
 {
-        private static final long serialVersionUID = 1L;
+        
+      private static final long serialVersionUID = 1L;
      
         private static SessionFactory sf;
         
@@ -51,7 +52,7 @@ public final class Validate extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -95,7 +96,7 @@ public final class Validate extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -114,7 +115,7 @@ public final class Validate extends Logic implements Serializable
                           }
                           else
                           {
-                               return (true);
+                                return (true);
                           }
                     }
                     else
@@ -139,7 +140,7 @@ public final class Validate extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -158,7 +159,7 @@ public final class Validate extends Logic implements Serializable
                           }
                           else
                           {
-                               return (true);
+                                return (true);
                           }
                     }
                     else
@@ -183,7 +184,7 @@ public final class Validate extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -249,7 +250,7 @@ public final class Validate extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -268,7 +269,7 @@ public final class Validate extends Logic implements Serializable
                           }
                           else
                           {
-                               return (true);
+                                return (true);
                           }
                     }
                     else
