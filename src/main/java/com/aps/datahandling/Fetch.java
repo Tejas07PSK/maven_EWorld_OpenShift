@@ -30,7 +30,8 @@ import java.util.List;
 
 public final class Fetch extends Logic implements Serializable 
 {
-        private static final long serialVersionUID = 1L;
+       
+      private static final long serialVersionUID = 1L;
      
         private static SessionFactory sf;
         
@@ -50,7 +51,7 @@ public final class Fetch extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -62,8 +63,7 @@ public final class Fetch extends Logic implements Serializable
                                  }
                          }
                     if(chk==0)
-                    {
-                         //ud=lst.get(0);
+                    { 
                          return (ud);
                     }
                     else
@@ -88,7 +88,7 @@ public final class Fetch extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -183,7 +183,7 @@ public final class Fetch extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -198,7 +198,7 @@ public final class Fetch extends Logic implements Serializable
                     {
                          if(plt.isEmpty())
                          {
-                             return (null);
+                              return (null);
                          }
                          else
                          {
@@ -227,7 +227,7 @@ public final class Fetch extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -242,7 +242,7 @@ public final class Fetch extends Logic implements Serializable
                     {
                          if(pllc.isEmpty())
                          {
-                             return (null);
+                              return (null);
                          }
                          else
                          {
@@ -271,7 +271,7 @@ public final class Fetch extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -286,7 +286,7 @@ public final class Fetch extends Logic implements Serializable
                     {
                          if(pllc.isEmpty())
                          {
-                             return (null);
+                              return (null);
                          }
                          else
                          {
@@ -325,7 +325,7 @@ public final class Fetch extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -340,7 +340,7 @@ public final class Fetch extends Logic implements Serializable
                     {
                          if(lo.isEmpty())
                          {
-                             return (null);
+                              return (null);
                          }
                          else
                          {
@@ -352,4 +352,5 @@ public final class Fetch extends Logic implements Serializable
                          return (null);
                     }
         }
+
 }
