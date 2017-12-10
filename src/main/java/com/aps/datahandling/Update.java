@@ -27,7 +27,8 @@ import com.aps.entitiespojos.UserDetails;
 
 public final class Update extends Logic implements Serializable 
 {
-        private static final long serialVersionUID = 1L;
+        
+     private static final long serialVersionUID = 1L;
      
         private static SessionFactory sf;
         
@@ -50,7 +51,7 @@ public final class Update extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -96,7 +97,7 @@ public final class Update extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -142,7 +143,7 @@ public final class Update extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -188,7 +189,7 @@ public final class Update extends Logic implements Serializable
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                  System.out.println("HibernateException Occured!!"+e);
+                                 System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -215,4 +216,5 @@ public final class Update extends Logic implements Serializable
                          return (false);
                     }
         }
+
 }
