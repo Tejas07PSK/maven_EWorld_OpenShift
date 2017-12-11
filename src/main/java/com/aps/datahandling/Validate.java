@@ -41,7 +41,7 @@ public final class Validate extends Logic implements Serializable
                  int chk=0;
                  sf=Logic.getSf();
                  Session s = null;
-                 List<String> lst=new ArrayList<String> ();
+                 List<Object> lst=new ArrayList<Object> ();
                  try{
                         s=sf.openSession();
                         s.beginTransaction();
@@ -85,7 +85,7 @@ public final class Validate extends Logic implements Serializable
                  int chk=0;
                  sf=Logic.getSf();
                  Session s = null;
-                 List<String> lst=new ArrayList<String> ();
+                 List<Object> lst=new ArrayList<Object> ();
                  try{
                         s=sf.openSession();
                         s.beginTransaction();
@@ -129,7 +129,7 @@ public final class Validate extends Logic implements Serializable
                  int chk=0;
                  sf=Logic.getSf();
                  Session s = null;
-                 List<String> lst=new ArrayList<String> ();
+                 List<Object> lst=new ArrayList<Object> ();
                  try{
                         s=sf.openSession();
                         s.beginTransaction();
@@ -173,7 +173,7 @@ public final class Validate extends Logic implements Serializable
                  int chk=0;
                  sf=Logic.getSf();
                  Session s = null;
-                 List<String> lst=new ArrayList<String> ();
+                 List<Object> lst=new ArrayList<Object> ();
                  try{
                         s=sf.openSession();
                         s.beginTransaction();
@@ -238,7 +238,7 @@ public final class Validate extends Logic implements Serializable
                  int chk=0;
                  sf=Logic.getSf();
                  Session s = null;
-                 List<String> lst=new ArrayList<String> ();
+                 List<Object []> lst=new ArrayList<Object []> ();
                  try{
                         s=sf.openSession();
                         s.beginTransaction();
@@ -269,12 +269,19 @@ public final class Validate extends Logic implements Serializable
                           }
                           else
                           {
-                                return (true);
+                                if ( (uid.equals((lst.get(0))[0].toString())) && (passw.equals((lst.get(0))[1].toString())))
+                                {
+                                     return (true);
+                                }
+                                else
+                                {
+                                     return (false);
+                                }
                           }
                     }
                     else
                     {
-                         return (false);
+                          return (false);
                     }
         }
         
