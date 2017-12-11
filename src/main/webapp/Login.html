@@ -32,9 +32,22 @@
                  name = "uid" 
                   class="mytext"/><br>
             <label><strong>Enter Password -</strong></label>
-          <input type = "text"
+          <input type = "password"
                  name = "pass" 
-                  class="mytext"/><br>
+                  class="mytext"/> <input type="checkbox" onclick="passwordShowHide()"> <strong style="color: whitesmoke;">Show/Hide</strong> 
+                  <script>
+                          function passwordShowHide() {
+                               var pss = document.getElementById("pswf");
+                               if (pss.type === "password"){
+                                    pss.type = "text";
+                               }
+                               else
+                               {
+                                   pss.type = "password"; 
+                               }
+                          }     
+                  </script>
+                  <br>
             <button type = "submit"
                     class="sbutton">Login</button>
                     <br>
