@@ -242,7 +242,7 @@ public final class Validate extends Logic implements Serializable
                  try{
                         s=sf.openSession();
                         s.beginTransaction();
-                        Query qry=s.createQuery("select usr_id from UserDetails ud where ud.usr_id=:urid and ud.pass=:passd");
+                        Query qry=s.createQuery("select usr_id, pass from UserDetails ud where ud.usr_id=:urid and ud.pass=:passd");
                         qry.setParameter("urid", uid);
                         qry.setParameter("passd",passw);
                         lst=qry.getResultList();
