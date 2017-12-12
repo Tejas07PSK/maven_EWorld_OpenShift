@@ -73,11 +73,12 @@ public final class AndroServlet extends HttpServlet
 	                 response.setBufferSize(8192);
                          PrintWriter out = null;
                          
-                         if (Validate.isUserExists(request.getParameter("uid"),request.getParameter("pass")))
+			 String usrid = Validate.isUserExists(request.getParameter("uidoreml"),request.getParameter("pass"));
+                         if ( usrid != null )
                          {
                                           out=response.getWriter();
                                           out.print("Login Success!! \n"
-                                                      +"Welcome User : "+request.getParameter("uid")+" \n");
+                                                      +"Welcome User : "+usrid+" \n");
                                           out.flush();
                                           out.close();
                          }
@@ -87,7 +88,8 @@ public final class AndroServlet extends HttpServlet
                                   out.print("ERROR!! \n"
 			                      + "FAILED!!! Incorrect User_Id Or Password. \n"
                                               + "REASON -- User/Password Does Not Exist!! \n"
-			                      + "Please Enter Correct Credentials!! \n");
+			                      + "Please Enter Correct Credentials!! \n"
+					      + "Be careful about spaces and character cases!! \n");
                                   out.flush();
                                   out.close();
                             }
