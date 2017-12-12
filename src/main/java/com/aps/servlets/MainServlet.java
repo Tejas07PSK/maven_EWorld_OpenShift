@@ -329,9 +329,10 @@ import java.io.File;
                                                                       }
                                                             }
                                                            return;
-                                                 default : if (Validate.isUserExists(request.getParameter("uid"),request.getParameter("pass")))
+                                                 default : String usrid = Validate.isUserExists(request.getParameter("uidoreml"),request.getParameter("pass"));
+						           if ( usrid != null )
                                                            {
-                                                                      request.setAttribute("uid", request.getParameter("uid"));
+                                                                      request.setAttribute("uid", usrid);
                                                                       getServletContext().getRequestDispatcher("/successlogin.jsp").forward(request,response);
                                                            }
                                                            else
@@ -342,8 +343,9 @@ import java.io.File;
 			    	                                                         + "<body bgcolor=\"#DBB247\">"
 			    	                                                         + "<h1>FAILED!!! Incorrect User_Id Or Password.</h1>"
                                                                                          + "<h2>REASON -- User/Password Does Not Exist!!</h2>"
-			    	                                                         + "<p>Please click the button to return to the Home page --</p>"
-			    	                                                         + "<a href=\"index.html\"><input type=\"button\" value=\"Return\"></a>"
+											 + "<h3>Be careful about spaces and character cases!!<h3>"
+			    	                                                         + "<p>Please click the button to return to the Login page --</p>"
+			    	                                                         + "<a href=\"Login.html\"><input type=\"button\" value=\"Return\"></a>"
 			    	                                                         + "</body></html>");
                                                                         out.flush();
                                                                         out.close();
