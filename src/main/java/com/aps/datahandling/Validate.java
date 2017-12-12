@@ -233,7 +233,7 @@ public final class Validate extends Logic implements Serializable
                  }
         }
         
-        synchronized public static boolean isUserExists(String uid, String passw)
+        synchronized public static String isUserExists(String uidoreml, String passw)
         {
                  int chk=0;
                  sf=Logic.getSf();
@@ -242,15 +242,16 @@ public final class Validate extends Logic implements Serializable
                  try{
                         s=sf.openSession();
                         s.beginTransaction();
-                        Query qry=s.createQuery("select usr_id, pass from UserDetails ud where ud.usr_id=:urid and ud.pass=:passd");
-                        qry.setParameter("urid", uid);
+                        Query qry=s.createQuery("select usr_id, pass, email_id from UserDetails ud where (ud.usr_id=:urid or ud.email_id=:eml) and ud.pass=:passd");
+                        qry.setParameter("urid", uidoreml);
+                        qry.setParameter("eml", uidoreml);
                         qry.setParameter("passd",passw);
                         lst=qry.getResultList();
                         s.getTransaction().commit();
                     }catch (Exception e)
                          {
                                  chk=-1;
-                                 System.out.println("HibernateException Occured!!"+e);
+                                  System.out.println("HibernateException Occured!!"+e);
                                  e.printStackTrace();
                          }
                     finally
@@ -265,23 +266,23 @@ public final class Validate extends Logic implements Serializable
                     {
                           if (lst.isEmpty())
                           {
-                                return (false);
+                                return (null);
                           }
                           else
                           {
-                                if ( (uid.equals((lst.get(0))[0].toString())) && (passw.equals((lst.get(0))[1].toString())))
-                                {
-                                     return (true);
-                                }
-                                else
-                                {
-                                     return (false);
-                                }
+                               if ( ( (uidoreml.equals((lst.get(0))[0].toString())) || (uidoreml.equals((lst.get(0))[2].toString())) ) && (passw.equals((lst.get(0))[1].toString())))
+                               {
+                                    return ((lst.get(0))[0].toString());
+                               }
+                               else
+                               {
+                                    return (null);
+                               }
                           }
                     }
                     else
                     {
-                          return (false);
+                         return (null);
                     }
         }
         
