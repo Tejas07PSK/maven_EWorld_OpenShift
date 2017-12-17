@@ -13,10 +13,21 @@
 <html>
      <head>
           <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-          <title>Rating Listing Page</title>
+          <title>E-WORLD Rating Listing Page</title>
+          <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+          <meta name="description" content="Visit The E-World Website">
           <link rel="stylesheet" type="text/css" href="stylesheets/mainpage.css"/>
+          <link rel="stylesheet" type="text/css" href="stylesheets/animations.css"/>
      </head>
-     <body>
+     <body onload="myFunction()">
+          <div class="bg">
+          <img src="images/direction-icon.png" alt="E-WORLD Icon" width="120" height="100" >
+       <h1> <strong>E-WORLD</strong></h1>
+       
+          <div id="myModal" class="modal">
+            <div class="loader"><h4 style="color: bisque; position: relative;" align="center">LOADING</h4></div>
+       </div> 
+      <div style="display:none;" id="myDiv" class="animate-bottom">
           <h1><%out.print(request.getAttribute("typoflst"));%></h1>
           <hr/>
           <hr/>
@@ -81,5 +92,8 @@
                               <input id="back" type="button" value="Back to Home">
                          </a>
          </form>
+                  </div>
+                  <script type="text/javascript" src="scripts/functions.js"></script>
+      </div>
      </body>
 </html>

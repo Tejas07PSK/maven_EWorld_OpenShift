@@ -16,12 +16,17 @@
      <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <meta name="description" content="Visit The E-World Website">
      <link rel="stylesheet" type="text/css" href="stylesheets/mainpage.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/animations.css"/>
 </head>
-<body>
 
-
-    <img src="images/direction-icon.png" alt="E-World Icon" width="120" height="100" >
+ <body onload="myFunction()">
+      <div class="bg"> 
+      <img src="images/direction-icon.png" alt="E-World Icon" width="120" height="100" >
        <h1> <strong>E-WORLD</strong></h1>
+       <div id="myModal" class="modal">
+            <div class="loader"><h4 style="color: bisque; position: relative;" align="center">LOADING</h4></div>
+       </div> 
+      <div style="display:none;" id="myDiv" class="animate-bottom"> 
      <table id="table2">    
     <tr>
     <th>
@@ -76,5 +81,8 @@
         </th>
     </tr>	
   </table>
+  </div>
+      <script type="text/javascript" src="scripts/functions.js"></script>
+      </div>
  </body>
 </html>

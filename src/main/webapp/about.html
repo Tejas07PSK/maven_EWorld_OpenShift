@@ -7,31 +7,39 @@ and open the template in the editor.
 <html>
      <head>
           <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>About Website</title>
-     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <meta name="description" content="Visit The E-World Website">
-     <link rel="stylesheet" type="text/css" href="stylesheets/mainpage.css"/>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <title>About Website</title>
+          <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+          <meta name="description" content="Visit The E-World Website">
+          <link rel="stylesheet" type="text/css" href="stylesheets/mainpage.css"/>
+          <link rel="stylesheet" type="text/css" href="stylesheets/animations.css"/>
      </head>
-     <body>
+     <body onload="myFunction()">
+          <div class="bg">
           <img src="images/direction-icon.png" alt="E-World Icon" width="120" height="100" >
           <br>
           <h1> <strong>E-WORLD</strong></h1>
-          <div>
+          <div id="myModal" class="modal">
+            <div class="loader"><h4 style="color: bisque; position: relative;" align="center">LOADING</h4></div>
+          </div> 
+            <div style="display:none;" id="myDiv" class="animate-bottom"> 
+         
                
                     <h1>This website has been developed as a part of an academic Project.</h1> <br>
                     <br>
                     <h2>Kudos to the Devs ;) ---- </h2><br>
-                    <h3 style="color: wheat;"><i>Palash Sarkar (Tj/Tejas)</i> --> The Mysterious Backend Maestro >> <a style="color: lawngreen;" href="https://github.com/Tejas07PSK">https://github.com/Tejas07PSK</a> </h3><br>
-                    <h3 style="color: wheat;"><i>Avinash Singh (Avi/LittleChef)</i> --> The Frontend Psycho >> <a style="color: lawngreen;" href="https://github.com/avinash2796">https://github.com/avinash2796</a> </h3><br>
-                    <h3 style="color: wheat;"><i>S.N. Pathak (The Hound)</i> --> Smart And Classy Profiler/Documenter/Manager >> <a style="color: lawngreen;" href="https://github.com/satyapathak">https://github.com/satyapathak</a> </h3><br>
-                    <h3 style="color: wheat;"><i>Sayan Banerjee (LadyKiller)</i> --> Well ask him..... >> <a style="color: lawngreen;" href="https://github.com/sayan">https://github.com/sayan</a> </h3><br>
+                    <h3 style="color: wheat;"><i>Palash Sarkar (Tj/Tejas)</i> --> The Mysterious Backend Maestro >> <a style="color: wheat;" href="https://github.com/Tejas07PSK">https://github.com/Tejas07PSK</a> </h3><br>
+                    <h3 style="color: wheat;"><i>Avinash Singh (Avi/LittleChef)</i> --> The Frontend Psycho >> <a style="color: wheat;" href="https://github.com/avinash2796">https://github.com/avinash2796</a> </h3><br>
+                    <h3 style="color: wheat;"><i>S.N. Pathak (The Hound)</i> --> Smart And Classy Profiler/Documenter/Manager >> <a style="color: wheat;" href="https://github.com/satyapathak">https://github.com/satyapathak</a> </h3><br>
+                    <h3 style="color: wheat;"><i>Sayan Banerjee (LadyKiller)</i> --> Well ask him..... >> <a style="color: wheat;" href="https://github.com/sayan">https://github.com/sayan</a> </h3><br>
                
                <br>
                <input type="button" onclick="location.href='index.html';"
                     value = "Return To Home"
                     class="rqstbutton"/>
                
+          </div>
+              <script type="text/javascript" src="scripts/functions.js"></script>
           </div>
      </body>
 </html>

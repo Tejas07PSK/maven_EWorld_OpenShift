@@ -8,14 +8,17 @@
      <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <meta name="description" content="Visit The E-World Website">
      <link rel="stylesheet" type="text/css" href="stylesheets/mainpage.css"/>
+     <link rel="stylesheet" type="text/css" href="stylesheets/animations.css"/>
 </head>
 
-<body>
-
-
-    <img src="images/direction-icon.png" alt="E-WORLD ICON" width="120" height="100" >
+<body onload="myFunction()">
+    <div class="bg">
+     <img src="images/direction-icon.png" alt="E-WORLD ICON" width="120" height="100" >
        <h1> <strong>E-WORLD</strong></h1>
-        
+       <div id="myModal" class="modal">
+            <div class="loader"><h4 style="color: bisque; position: relative;" align="center">LOADING</h4></div>
+       </div> 
+      <div style="display:none;" id="myDiv" class="animate-bottom"> 
     <h2>
     LOGIN OR CREATE ACCOUNT
     </h2>
@@ -34,32 +37,23 @@
             <label><strong>Enter Password -</strong></label>
           <input type = "password"
                  name = "pass" 
-                  class="mytext" id="pswf"/> <input type="checkbox" onclick="passwordShowHide()"> <strong style="color: whitesmoke;">Show/Hide</strong> 
-                  <script>
-                          function passwordShowHide() {
-                               var pss = document.getElementById("pswf");
-                               if (pss.type === "password"){
-                                    pss.type = "text";
-                               }
-                               else
-                               {
-                                   pss.type = "password"; 
-                               }
-                          }     
-                  </script>
+                 class="mytext" id="pswf"/> <input type="checkbox" onclick="passwordShowHide()"> <strong style="color: whitesmoke;">Show/Hide</strong>
+                 <script type="text/javascript" src="scripts/functions.js"></script>
                   <br>
             <button type = "submit"
                     class="sbutton">Login</button>
-                    <br>
+       </p>
+      </fieldset>
+    </form>
+           <br>
             <input type="button" onclick="location.href='userregistration.html';"
                     value = "Create Account"
                     class="sbutton"/>
             <input type="button" onclick="location.href='index.html';"
                     value = "Home"
                     class="sbutton"/>
-        </p>
-      </fieldset>
-    </form>
-       
+   </div>
+       <script type="text/javascript" src="scripts/functions.js"></script>
+       </div>
   </body>
 </html>
